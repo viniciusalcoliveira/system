@@ -1,0 +1,112 @@
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f4f8; /* Light background for a clean look */
+            color: #2c3e50; /* Darker text for readability */
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased; /* Smoother font rendering */
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Custom animation for dropdown fade-in */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scaleY(0.9) translateY(-10px); }
+            to { opacity: 1; transform: scaleY(1) translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.3s ease-out forwards;
+            transform-origin: top;
+        }
+
+        /* Custom scrollbar styling for a consistent look */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: rgba(11, 61, 145, 0.6); /* Semi-transparent primary blue */
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(11, 61, 145, 0.1); /* Lighter track */
+        }
+
+        /* Specific styles for collapsibles */
+        .collapsible-header {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 1.5rem;
+            background-color: #e0e7ff; /* Light blue for headers */
+            border-bottom: 1px solid #c2c9d6;
+            font-weight: 600;
+            color: #2c3e50;
+            transition: background-color 0.3s ease;
+            border-radius: 0.75rem 0.75rem 0 0; /* Rounded top corners */
+        }
+        .collapsible-header:hover {
+            background-color: #c7d2fe; /* Lighter blue on hover */
+        }
+        .collapsible-content {
+            padding: 1rem 1.5rem;
+            background-color: #ffffff;
+            border-left: 1px solid #e2e8f0;
+            border-right: 1px solid #e2e8f0;
+            border-bottom: 1px solid #e2e8f0;
+            border-radius: 0 0 0.75rem 0.75rem; /* Rounded bottom corners */
+            overflow: hidden;
+            max-height: 0;
+            transition: max-height 0.5s ease-out, padding 0.5s ease-out;
+        }
+        .collapsible-content.active {
+            max-height: 1000px; /* Increased max-height to ensure content fits */
+            padding-bottom: 1.5rem;
+        }
+        .collapsible-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            border-bottom: 1px dashed #e2e8f0;
+            flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+        }
+        .collapsible-item:last-child {
+            border-bottom: none;
+        }
+        .collapsible-item-name {
+            font-weight: 500;
+            color: #334155;
+            flex: 1; /* Allow name to take available space */
+            min-width: 30%; /* Ensure name takes at least 30% width */
+        }
+        .collapsible-item-desc {
+            color: #64748b;
+            text-align: right;
+            flex: 2; /* Allow description to take more space */
+            min-width: 60%; /* Ensure description takes at least 60% width */
+        }
+        .arrow-icon {
+            transition: transform 0.3s ease;
+        }
+        .collapsible-header.active .arrow-icon {
+            transform: rotate(180deg);
+        }
+        .important-note {
+            background-color: #fffbeb;
+            border-left: 4px solid #f59e0b;
+            padding: 1rem;
+            margin-top: 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .important-note ul {
+            list-style: disc;
+            margin-left: 1.5rem;
+        }
+        .important-note li {
+            margin-bottom: 0.5rem;
+        }
+   
